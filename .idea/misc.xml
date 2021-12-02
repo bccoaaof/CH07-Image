@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android-Work/CH07-Image/0700_LifeCycle/src/main/res/layout/m0700.xml" value="0.28703703703703703" />
+        <entry key="..\:/Android-Work/CH07-Image/0700_LifeCycle/src/main/res/menu/m0700.xml" value="0.25651808242220353" />
+        <entry key="..\:/Android-Work/CH07-Image/0701_ImageSwitcher/src/main/res/layout/m0701.xml" value="0.2606837606837607" />
+        <entry key="..\:/Android-Work/CH07-Image/0701_ImageSwitcher/src/main/res/menu/m0701.xml" value="0.2606837606837607" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
