@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="68dp">
+
+    <ImageView
+        android:id="@+id/m0704_img001"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="2dp"
+        android:background="@color/Teal"
+        android:contentDescription="@string/m0704_desc"
+        android:scaleType="matrix"
+        tools:srcCompat="@drawable/img01th" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@color/Teal"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/m0704_t003"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/m0704_t003"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/m0704_t004"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:orderInCategory="999"
+        android:title="@string/action_settings"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/Item01"
+        android:orderInCategory="9"
+        android:title="@string/m0703_alpha" />
+    <item
+        android:id="@+id/Item02"
+        android:orderInCategory="19"
+        android:title="@string/m0703_rotate" />
+    <item
+        android:id="@+id/Item03"
+        android:orderInCategory="29"
+        android:title="@string/m0703_trans" />
+    <item
+        android:id="@+id/Item04"
+        android:orderInCategory="39"
+        android:title="@string/m0703_bounce" />
+    <item
+        android:id="@+id/Item05"
+        android:orderInCategory="49"
+        android:title="@string/Item05" />
+</menu>
