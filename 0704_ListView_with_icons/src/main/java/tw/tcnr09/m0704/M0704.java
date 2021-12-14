@@ -41,7 +41,7 @@ public class M0704 extends ListActivity {
             for (int x = 0; x < listFromResource.length; x++) {
                   Map<String, Object> item = new HashMap<String, Object>();
                   //靠getIdentifier()抓圖，不需要副檔名
-                  String idName = "img"+String.format("%02d"+"th", (x + 1));
+                  String idName = String.format("img%02dth", (x + 1));
                   int resID = getResources().getIdentifier(idName, "drawable", getPackageName());
                   item.put("img", resID);
                   //一星期有七天

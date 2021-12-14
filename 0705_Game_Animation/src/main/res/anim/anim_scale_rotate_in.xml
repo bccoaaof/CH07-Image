@@ -7,7 +7,7 @@
         android:interpolator="@android:anim/linear_interpolator"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:startOffset="0"
+        android:startOffset="10"
         android:toXScale="1.0"
         android:toYScale="1.0" />
     <rotate
@@ -17,6 +17,6 @@
         android:interpolator="@android:anim/accelerate_decelerate_interpolator"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:startOffset="0"
+        android:startOffset="10"
         android:toDegrees="1080" />
 </set>

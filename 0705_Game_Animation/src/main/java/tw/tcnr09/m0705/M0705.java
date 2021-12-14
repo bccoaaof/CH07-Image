@@ -4,7 +4,9 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.BounceInterpolator;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
@@ -21,7 +23,7 @@ public class M0705 extends AppCompatActivity implements ViewSwitcher.ViewFactory
 
       private TextView s001, f000;
       private String player_select, ans;
-      private ImageView c001;
+      private ImageSwitcher c001;
       private ImageButton b001, b002, b003;
       private MediaPlayer startmusic, mediaWin, mediaLose, mediaDraw, endmusic;
       private Toast toast;
@@ -37,7 +39,7 @@ public class M0705 extends AppCompatActivity implements ViewSwitcher.ViewFactory
 
       //初始化物件
       private void setupViewComponent() {
-            c001 = (ImageView) findViewById(R.id.m0705_c001);
+            c001 = (ImageSwitcher) findViewById(R.id.m0705_c001);
             s001 = (TextView) findViewById(R.id.m0705_s001);
             f000 = (TextView) findViewById(R.id.m0705_f000);
 
@@ -45,13 +47,17 @@ public class M0705 extends AppCompatActivity implements ViewSwitcher.ViewFactory
             b002 = (ImageButton) findViewById(R.id.m0705_b002);
             b003 = (ImageButton) findViewById(R.id.m0705_b003);
 
+            //設定工廠
+            c001.setFactory(this);
+
             // ---開機動畫---
             r_layout = (RelativeLayout) findViewById(R.id.m0705_r001);
             r_layout.setBackgroundResource(R.drawable.back01);
 //        r_layout.setAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_scale_rotate_out));
             r_layout.setAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_scale_rotate_in));
             r_layout.setBackgroundResource(R.drawable.back01);
-
+            //----設定背景----
+            user_setAlpha();
             // --開啟片頭音樂-----
             //startmusic = MediaPlayer.create(getApplication(), R.raw.guess);
             // startmusic.start();
@@ -143,7 +149,13 @@ public class M0705 extends AppCompatActivity implements ViewSwitcher.ViewFactory
                               player_select = getString(R.string.m0705_s001) + getString(R.string.papper);
                               break;
                   }
-                  //-------------------------------------------------
+                  //---------電腦出拳動畫---------------------------
+                  c001.clearAnimation();
+
+                  Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_trans_bounce);
+                  anim.setInterpolator(new BounceInterpolator());
+                  c001.setAnimation(anim);
+
                   s001.setText(player_select);
                   f000.setText(ans);
             }
@@ -153,11 +165,11 @@ public class M0705 extends AppCompatActivity implements ViewSwitcher.ViewFactory
       private void user_setAlpha() {
 
             //imageButton 背景為銀色且為全透明
-            b001.setBackgroundColor(Color.parseColor("#c0c0c0"));
+            b001.setBackgroundResource(R.drawable.circle_shape);
             b001.getBackground().setAlpha(0); //0-255
-            b002.setBackgroundColor(Color.parseColor("#c0c0c0"));
+            b002.setBackgroundResource(R.drawable.circle_shape);
             b002.getBackground().setAlpha(0);
-            b003.setBackgroundColor(Color.parseColor("#c0c0c0"));
+            b003.setBackgroundResource(R.drawable.circle_shape);
             b003.getBackground().setAlpha(0);
       }
 
@@ -196,10 +208,8 @@ public class M0705 extends AppCompatActivity implements ViewSwitcher.ViewFactory
 
       @Override
       public void onBackPressed() {
-            super.onBackPressed();
-            //執行結束，也就是onStop()
-            this.finish();
-            //music(4);
+//            super.onBackPressed();
+//                  Toast.makeText(getApplicationContext(), "靜靜")
       }
 
       //結束
