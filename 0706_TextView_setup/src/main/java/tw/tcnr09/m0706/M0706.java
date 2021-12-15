@@ -45,9 +45,12 @@ public class M0706 extends AppCompatActivity implements View.OnClickListener {
 //        Spannable.SPAN_INCLUSIVE_INCLUSIVE：前後都包括。
 //        ---------------------
 
-            SpannableString sp =new SpannableString(getString(R.string.m0706_t001));
-            //設置字體顏色為藍start起點0 end3，從0開始有3個字
+            SpannableString sp =new SpannableString(getString(R.string.m0706_t001,"999","雲端班"));
+//            SpannableString sp2 =new SpannableString(getString(R.string.m0706_t002,"456789","雲端班"));
+
+            //設置字體顏色為藍start起點0 end3，從0開始有3個字元，全形兩個字元，中文字兩個字元
             sp.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
             //設置背景顏色
             sp.setSpan(new BackgroundColorSpan(Color.RED), 20, 26, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             sp.setSpan(new BackgroundColorSpan(Color.YELLOW), 27, 29, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -64,11 +67,10 @@ public class M0706 extends AppCompatActivity implements View.OnClickListener {
             //超連結
             sp.setSpan(new URLSpan("http://www.google.com"), 10, 16, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-            //段落
-//            sp.setSpan();
-
             //讓超連結有效
             t001.setMovementMethod(LinkMovementMethod.getInstance());
+
+            //TextView可設可按
             t001.setOnClickListener(this);
             t001.setText(sp);
       }
